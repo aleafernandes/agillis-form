@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Visitas Agillis</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Incluindo a biblioteca xlsx -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <img src="/Grupo Agillis.png" alt="logoagillis">
+    </div>
+    <div class="container">
+        <!--Formulário -->
+        <form id="meuFormulario" class="formulario">
+            <label for="nome">Cliente:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome do Cliente"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="email@exemplo.com"><br><br>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" placeholder="Av..Rua..."><br><br>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Insira o Bairro"><br><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(DDD) + Telefone"><br><br>
+
+            <label for="responsavel">Rensponsável:</label>
+            <input type="text" id="responsavel" name="responsavel"><br><br>
+
+            <label for="portaria">Portaria:</label>
+            <select name="portaria" id="portaria">
+                <option value="nao-possui">Não Possui</option>
+                <option value="presencial">Presencial</option>
+                <option value="virtual">Virtual</option>
+            </select><br><br>
+
+            <label for="portaria-e">Empresa prestadora do serviço de portaria:</label>
+            <input type="text" id="portaria-e" name="portaria-e"><br><br>
+
+            <label for="limpezaconservacao">Limpeza e Conservação:</label>
+            <select name="limpezaconservacao" id="limpezaconservacao">
+                <option value="Não Possui">Não Possui</option>
+                <option value="Possui">Possui</option>
+            </select><br><br>
+
+            <label for="limpezaconservacao-e">Empresa prestadora do serviço de Limpeza e Conservação:</label>
+            <input type="text" id="limpezaconservacao-e" name="limpezaconservacao-e"><br><br>
+
+            <label for="vigilanciapatrimonial">Vigilância Patrimonial:</label>
+            <select name="vigilanciapatrimonial" id="vigilanciapatrimonial">
+                <option value="Não Possui">Não Possui</option>
+                <option value="Possui">Possui</option>
+            </select><br><br>
+
+            <label for="vigilanciapatrimonial-e">Empresa prestadora do serviço de Vigilância Patrimonial:</label>
+            <input type="text" id="vigilanciapatrimonial-e" name="vigilanciapatrimonial-e"><br><br>
+
+            <label for="data">Data da Prospecção:</label>
+            <input type="date" id="data" name="data"><br><br>
+
+            <label for="ocorrencia">Ocorrência:</label>
+            <input class="occorrencia" type="text" id="ocorrencia" name="ocorrencia"><br><br>
+            <div class="cont-btn">
+                <input class="button salvar" type="button" value="Salvar Dados" onclick="salvarDados()">
+                <input class="button gerar" type="button" value="Gerar Excel" onclick="gerarExcel()">
+                <input class="button excluir" type="button" value="Excluir Todos os Dados" onclick="limparLocalStorage()">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
