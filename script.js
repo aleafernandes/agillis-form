@@ -1,5 +1,6 @@
 // Função para salvar os dados no localStorage
 function salvarDados() {
+    var vendedor = document.getElementById('vendedor').value;
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
     var endereco = document.getElementById('endereco').value;
@@ -17,6 +18,7 @@ function salvarDados() {
 
 
     var novoDado = {
+        vendedor: vendedor,
         nome: nome,
         email: email,
         endereco: endereco,
@@ -53,10 +55,10 @@ function gerarExcel() {
 
     var wb = XLSX.utils.book_new();
 
-    var data = [["Cliente", "Email", "Endereço", "Bairro", "Telefone", "Responsável", "Portaria", "Empresa de Portaria", "Limpeza e Conservação", "Empresa de Limpeza e Conservação", "Vigilância Patrimonial", "Empresa de Vigilância Patrimonial", "Data", "Ocorrência"]];
+    var data = [["Vendedor","Cliente", "Email", "Endereço", "Bairro", "Telefone", "Responsável", "Portaria", "Empresa de Portaria", "Limpeza e Conservação", "Empresa de Limpeza e Conservação", "Vigilância Patrimonial", "Empresa de Vigilância Patrimonial", "Data", "Ocorrência"]];
 
     for (var i = 0; i < dadosExistentes.length; i++) {
-        data.push([dadosExistentes[i].nome, dadosExistentes[i].email, dadosExistentes[i].endereco, dadosExistentes[i].bairro, dadosExistentes[i].telefone, dadosExistentes[i].responsavel, dadosExistentes[i].portaria, dadosExistentes[i].portariaEmpresa, dadosExistentes[i].limpezaconservacao, dadosExistentes[i].limpezaconservacaoEmpresa, dadosExistentes[i].vigilanciapatrimonial, dadosExistentes[i].vigilanciapatrimonialEmpresa, dadosExistentes[i].data, dadosExistentes[i].ocorrencia]);
+        data.push([dadosExistentes[i].vendedor,dadosExistentes[i].nome, dadosExistentes[i].email, dadosExistentes[i].endereco, dadosExistentes[i].bairro, dadosExistentes[i].telefone, dadosExistentes[i].responsavel, dadosExistentes[i].portaria, dadosExistentes[i].portariaEmpresa, dadosExistentes[i].limpezaconservacao, dadosExistentes[i].limpezaconservacaoEmpresa, dadosExistentes[i].vigilanciapatrimonial, dadosExistentes[i].vigilanciapatrimonialEmpresa, dadosExistentes[i].data, dadosExistentes[i].ocorrencia]);
     }
 
     var ws = XLSX.utils.aoa_to_sheet(data);
